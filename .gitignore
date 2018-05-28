@@ -1,0 +1,11 @@
+# Compiled python modules.
+*.pyc
+# Setuptools distribution folder.
+/dist/
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+*.geojson
+*.tif
+build
+sez-boundaries_201204_00N060E.csv
+*.pyc
