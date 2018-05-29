@@ -3,7 +3,6 @@
 import sys,glob,os
 from os import makedirs, path as op
 op.dirname(sys.executable)
-import numpy as np
 import gippy
 import gippy.algorithms as alg
 
@@ -29,7 +28,6 @@ def generate_stats():
             res = geoimg.resolution()
             f = open('{}_{}_{}.csv'.format(geo_fname, date, tile), 'w')
             f.write('min,max,mean,stddev,skew,count\n')
-            # if np.max(geoimg) >0:
             fout = geoimg.basename() + '_{}.tif'.format(str(geo_fname))
             imgout = alg.cookie_cutter([geoimg], fout, geovec[0], xres=res.x(), yres=res.y(), proj=geoimg.srs())
             stats = imgout[0].stats()
