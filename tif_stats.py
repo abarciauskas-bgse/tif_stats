@@ -3,8 +3,7 @@
 import sys,glob,os
 from os import makedirs, path as op
 op.dirname(sys.executable)
-import gippy.GeoImage as GeoImage
-import gippy.GeoVector as GeoVector
+import gippy
 import gippy.algorithms as alg
 
 import shutil
@@ -23,9 +22,9 @@ def generate_stats():
             geo_fname = filename.split("/")[-1]
             date=basename[10:16]
             tile = basename[28:35]
-            geoimg = GeoImage.open([geotif])
+            geoimg = gippy.GeoImage.open([geotif])
             geoimg.set_nodata(0)
-            geovec = GeoVector(geojson)
+            geovec = gippy.GeoVector(geojson)
             res = geoimg.resolution()
             f = open('{}_{}_{}.csv'.format(geo_fname, date, tile), 'w')
             f.write('min,max,mean,stddev,skew,count\n')
