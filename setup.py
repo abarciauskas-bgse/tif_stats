@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='tif_stats',
-      version='0.5',
+      version='0.8',
       description='Generates basic statistics on a geojson clipped tif image',
       url='',
       author='Development Seed',
