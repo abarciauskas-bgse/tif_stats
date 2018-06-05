@@ -36,7 +36,7 @@ def generate_stats():
             f.close()
             if output_filename not in output_files:
                 output_files.append(output_filename)
-            shutil.move(fout, output_path)
+            shutil.move(os.path.join('.', fout), os.path.join(output_path, fout))
             print('{} site stats extracted!'.format(geojson))
     return output_files
 
